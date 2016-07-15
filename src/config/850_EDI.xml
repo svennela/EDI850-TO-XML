@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<medi:edimap xmlns:medi="http://www.milyn.org/schema/edi-message-mapping-1.2.xsd">
+    <!--  <medi:import resource="input-message.edi" namespace="un" truncatableFields="true" truncatableComponents="true" /> -->
+    <medi:description name="Order" version="1.0" />
+    <!-- "&#126;" code for tilde(~)  -->
+    <medi:delimiters segment="&#126;" field="*" component="^" sub-component=""/>
+    <medi:segments xmltag="Order">
+        <!--01 ISA Segment – Interchange Control Header Detail-->
+        <medi:segment segcode="ISA" xmltag="InterchangeControlHeaderDetail" >
+            <!--01 Authorization Information Qualifier-->
+            <medi:field xmltag="AuthorizationInformationQualifier" />
+            <!--02 Authorization Information-->
+            <medi:field xmltag="AuthorizationInformation" />
+            <!--03 Security Information Qualifier-->
+            <medi:field xmltag="SecurityInformationQualifier" />
+            <!--04 Security Information-->
+            <medi:field xmltag="SecurityInformation" />
+            <!--05 Interchange ID Qualifier- Sender-->
+            <medi:field xmltag="InterchangeIDQualifierSender" />
+            <!--06 Interchange Sender ID-->
+            <medi:field xmltag="InterchangeSenderID" />
+            <!--07 Interchange ID Qualifier-->
+            <medi:field xmltag="InterchangeIDQualifier" />
+            <!--08 Interchange Receiver ID-->
+            <medi:field xmltag="InterchangeReceiverID" />
+            <!--09 Interchange Date-->
+            <medi:field xmltag="InterchangeDate" />
+            <!--10 Interchange Time-->
+            <medi:field xmltag="InterchangeTime" />
+            <!--11 Interchange Control Standards Identifier-->
+            <medi:field xmltag="InterchangeControlStandardsIdentifier" />
+            <!--12 Interchange Control Version Number-->
+            <medi:field xmltag="InterchangeControlVersionNumber" />
+            <!--13 Interchange Control Number-->
+            <medi:field xmltag="InterchangeControlNumber" />
+            <!--14 Acknowledgement Requested-->
+            <medi:field xmltag="AcknowledgementRequested" />
+            <!--15 Test Indicator-->
+            <medi:field xmltag="TestIndicator" />
+            <!--16 Sub-element Separator-->
+            <medi:field xmltag="SubElementSeparator" />
+        </medi:segment>
+
+        <!--02 GS Segment - Functional Group Header-->
+        <medi:segment segcode="GS" xmltag="FunctionalGroupHeader">
+            <!--Functional Identifier Code-->
+            <medi:field xmltag="FunctionalIdentifierCode" />
+            <!--Application Sender's Code-->
+            <medi:field xmltag="ApplicationSenderCode" />
+            <!--Application Receiver's Code-->
+            <medi:field xmltag="ApplicationReceiverCode" />
+            <!--Date-->
+            <medi:field xmltag="Date" />
+            <!--Time-->
+            <medi:field xmltag="Time" />
+            <!--Group Control Number-->
+            <medi:field xmltag="GroupControlNumber" />
+            <!--Responsible Agency Code-->
+            <medi:field xmltag="ResponsibleAgencyCode" />
+            <!--Version/Release/Industry Code-->
+            <medi:field xmltag="VersionReleaseIndustryCode" />
+        </medi:segment>
+
+        <!--03 ST Segment - Transaction Set Header-->
+        <medi:segment segcode="ST" xmltag="TransactionSetHeader" >
+            <!--Transaction Set Identifier Code-->
+            <medi:field xmltag="TransactionSetIdentifierCode" />
+            <!--Transaction Set Control Number-->
+            <medi:field xmltag="TransactionSetControlNumber" />
+        </medi:segment>
+        <!--04 BEG Segment - Beginning Segment for Purchase Order-->
+        <medi:segment segcode="BEG" xmltag="PurchaseOrder" >
+            <!--Transaction Set Purpose Code-->
+            <medi:field xmltag="TransactionSetPurposeCode" />
+            <!--Purchase Order Type Code-->
+            <medi:field xmltag="TransactionSetControlNumber" />
+            <!--Purchase Order Number-->
+            <medi:field xmltag="PurchaseOrderNumber" />
+            <!--Null-->
+            <medi:field xmltag="Null" />
+            <!--Purchase Order Date-->
+            <medi:field xmltag="PurchaseOrderDate" />
+        </medi:segment>
+        <!--05 CUR Segment - Currency – Mandatory-->
+        <medi:segment segcode="CUR" xmltag="Currency" >
+            <!--Entity Identifier Code-->
+            <medi:field xmltag="EntityIdentifierCode" />
+            <!--Currency Code-->
+            <medi:field xmltag="CurrencyCode" />
+        </medi:segment>
+
+        <!--06 REF Segment – Reference Identification - Optional-->
+        <!--minOccurs="0" means the segment can be optional-->
+        <!--truncatable="true" required="false" means the field can be optional-->
+        <medi:segment segcode="REF" xmltag="ReferenceIdentification" truncatable="true" minOccurs="0">
+            <!--Reference Identification Qualifier-->
+            <medi:field xmltag="ReferenceIdentificationQualifier"  truncatable="true" required="false"/>
+            <!--Reference Identification-->
+            <medi:field xmltag="ReferenceIdentification"  truncatable="true" required="false"/>
+        </medi:segment>
+        <!--07 PER Segment – Administrative Communications Contact - Optional-->
+        <medi:segment segcode="PER" xmltag="AdministrativeCommunicationsContact"  truncatable="true" minOccurs="0">
+            <!--Contact Function Code – Buyer Name or Dept-->
+            <medi:field xmltag="ContactFunctionCode" truncatable="true" required="false"/>
+            <!--BI Buyer’s Full Name-->
+            <medi:field xmltag="BIBuyerFullName" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--08 FOB Segment – F.O.B. Related Instructions - Optional-->
+        <medi:segment segcode="FOB" xmltag="RelatedInstructions" truncatable="true" minOccurs="0">
+            <!--Shipment Method of Payment-->
+            <medi:field xmltag="ShipmentMethod" truncatable="true" required="false"/>
+            <!--Location Qualifier-->
+            <medi:field xmltag="LocationQualifier" truncatable="true" required="false"/>
+            <!--Description-->
+            <medi:field xmltag="Description" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--09 CSH Segment – Sales Requirements - Optional-->
+        <medi:segment segcode="CSH" xmltag="SalesRequirements" truncatable="true" minOccurs="0">
+            <!--Sales Requirement Code-->
+            <medi:field xmltag="SalesRequirementCode" />
+        </medi:segment>
+
+        <!--10 ITD Segment – Terms of Sale - Optional-->
+        <medi:segment segcode="ITD" xmltag="TermsOfSale" truncatable="true" minOccurs="0">
+            <!--01 Null-->
+            <medi:field xmltag="Null" />
+            <!--02 Null-->
+            <medi:field xmltag="Null" />
+            <!--03 Null-->
+            <medi:field xmltag="Null" />
+            <!--04 Null-->
+            <medi:field xmltag="Null" />
+            <!--05 Null-->
+            <medi:field xmltag="Null" />
+            <!--06 Null-->
+            <medi:field xmltag="Null" />
+            <!--07 Null-->
+            <medi:field xmltag="Null" />
+            <!--08 Null-->
+            <medi:field xmltag="Null" />
+            <!--09 Null-->
+            <medi:field xmltag="Null" />
+            <!--10 Null-->
+            <medi:field xmltag="Null" />
+            <!--11 Null-->
+            <medi:field xmltag="Null" />
+            <!--12 Description of terms-->
+            <medi:field xmltag="Description" />
+        </medi:segment>
+
+        <!--11 DTM Segment – Date and Time -->
+        <medi:segment segcode="DTM" xmltag="DateTime" >
+            <!--Date/Time Qualifier-->
+            <medi:field xmltag="Qualifier" />
+            <!--Date-->
+            <medi:field xmltag="Date" />
+        </medi:segment>
+
+        <!--12 TD5 Segment – Carrier Details -->
+        <medi:segment segcode="TD5" xmltag="CarrierDetails" >
+            <!--01 Null-->
+            <medi:field xmltag="Null" />
+            <!--02 Null-->
+            <medi:field xmltag="Null" />
+            <!--03 Null-->
+            <medi:field xmltag="Null" />
+            <!--04 Transport Type Code-->
+            <medi:field xmltag="TransportTypeCode" />
+            <!--05 Routing-->
+            <medi:field xmltag="Routing" />
+        </medi:segment>
+
+        <!--13 N9 Segment – Reference Identification-->
+        <medi:segment segcode="N9" xmltag="ReferenceIdentification" truncatable="true">
+            <!--Reference Identification Qualifier-->
+            <medi:field xmltag="Qualifier" />
+            <!--Reference Identification -->
+            <medi:field xmltag="Identification" />
+            <!--Free-form description of position 2-->
+            <medi:field xmltag="Description" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--14 MTX Segment – Purchase Order Header Comments -->
+        <medi:segment segcode="MTX" xmltag="PurchaseOrderHeader" truncatable="true">
+            <!--Reference Code-->
+            <medi:field xmltag="ReferenceCode" />
+            <!--Message Text-->
+            <medi:field xmltag="MessageText" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--15 N1 Segment – Ship To Name-->
+        <medi:segment segcode="N1" xmltag="ShipToName" truncatable="true">
+            <!--Entity Identifier Code-->
+            <medi:field xmltag="EntityIdentifierCode" />
+            <!--Name-->
+            <medi:field xmltag="Name" />
+            <!--Identification Code Qualifier-->
+            <medi:field xmltag="IdentificationCodeQualifier" truncatable="true" required="false"/>
+            <!--Identification Code-->
+            <medi:field xmltag="IdentificationCode" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--16 N2 Segment – Ship To Address Information-->
+        <medi:segment segcode="N2" xmltag="ShipToAddressInformation" truncatable="true">
+            <!--Address Information-->
+            <medi:field xmltag="AddressInformation" />
+            <!--Address Information-->
+            <medi:field xmltag="AddressInformation2" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--17 N3 Segment – Ship To Address Information-->
+        <medi:segment segcode="N3" xmltag="ShipToAddressInformation" truncatable="true">
+            <!--Address Information-->
+            <medi:field xmltag="AddressInformation" truncatable="true" required="false"/>
+            <!--Address Information-->
+            <medi:field xmltag="AddressInformation2" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--18 N4 Segment – Ship To Geographical Location-->
+        <medi:segment segcode="N4" xmltag="ShipToGeographicalLocation" >
+            <!--City Name-->
+            <medi:field xmltag="CityName" />
+            <!--State or Province-->
+            <medi:field xmltag="State" />
+            <!--Postal Code-->
+            <medi:field xmltag="Postal" />
+            <!--Country Code-->
+            <medi:field xmltag="Country" />
+        </medi:segment>
+
+        <!--19 N1 Segment – Vendor Name-->
+        <medi:segment segcode="N1" xmltag="VendorName" >
+            <!--Entity Identifier Code-->
+            <medi:field xmltag="EntityIdentifierCode" />
+            <!--Vendor Name-->
+            <medi:field xmltag="VendorName" />
+        </medi:segment>
+
+        <!--20 N3 Segment – Vendor’s Street Address Information-->
+        <medi:segment segcode="N3" xmltag="VendorAddressInformation" truncatable="true">
+            <!--Address Information-->
+            <medi:field xmltag="AddressInformation" />
+            <!--Address Information-->
+            <medi:field xmltag="AddressInformation2" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--21 N4 Segment – Vendor’s Geographical Location-->
+        <medi:segment segcode="N4" xmltag="VendorGeographicalLocation" >
+            <!--City Name-->
+            <medi:field xmltag="CityName" />
+            <!--State or Province-->
+            <medi:field xmltag="State" />
+            <!--Postal Code-->
+            <medi:field xmltag="Postal" />
+            <!--Country Code-->
+            <medi:field xmltag="Country" />
+        </medi:segment>
+
+        <!--22 N1 Segment – Bill To Name-->
+        <medi:segment segcode="N1" xmltag="BillToName" >
+            <!--Entity Identifier Code-->
+            <medi:field xmltag="EntityIdentifierCode" />
+            <!--Bill To Name-->
+            <medi:field xmltag="BillToName" />
+        </medi:segment>
+
+        <!--23 N3 Segment – Bill To Address Information-->
+        <medi:segment segcode="N3" xmltag="BillToAddressInformation"  truncatable="true">
+            <!--Address Information-->
+            <medi:field xmltag="AddressInformation" />
+            <!--Address Information Optional-->
+            <medi:field xmltag="AddressInformation2" truncatable="true" required="false"/>
+        </medi:segment>
+
+        <!--24 N4 Segment – Bill To Geographical Location-->
+        <medi:segment segcode="N4" xmltag="BillToGeographicalLocation" >
+            <!--City Name-->
+            <medi:field xmltag="CityName" />
+            <!--State or Province-->
+            <medi:field xmltag="State" />
+            <!--Postal Code-->
+            <medi:field xmltag="Postal" />
+            <!--Country Code-->
+            <medi:field xmltag="Country" />
+        </medi:segment>
+
+        <!--25 PO1 Segment – Baseline Item Data-->
+        <medi:segment segcode="PO1" xmltag="BaselineItemData" >
+            <!--01LineNumber-->
+            <medi:field xmltag="LineNumber" />
+            <!--Quantity Ordered-->
+            <medi:field xmltag="QuantityOrdered" />
+            <!--Unit of Measure-->
+            <medi:field xmltag="UnitMeasure" />
+            <!--Unit Price-->
+            <medi:field xmltag="UnitPrice" />
+            <!--Basis of Unit Price Code-->
+            <medi:field xmltag="BasisUnitPriceCode" />
+            <!--Product Qualifier – Vendor Part Number-->
+            <medi:field xmltag="VendorProductQualifier" />
+            <!--Product ID-->
+            <medi:field xmltag="VendorPartNumber" />
+            <!--Product Qualifier – BI’s Item Number-->
+            <medi:field xmltag="BIProductQualifier" />
+            <!--Product ID-->
+            <medi:field xmltag="BIItemNumber" />
+            <!--Product Qualifier – UPC or ISB Number-->
+            <medi:field xmltag="UPCProductQualifier" />
+            <!--UPC or ISBN Number-->
+            <medi:field xmltag="UPCNumber" />
+        </medi:segment>
+
+        <!--26 PID Segment – Product Description-->
+        <medi:segment segcode="PID" xmltag="ProductDescription" >
+            <!--Item Description Type-->
+            <medi:field xmltag="ItemDescriptionType" />
+            <!--Null-->
+            <medi:field xmltag="Null" />
+            <!--Null-->
+            <medi:field xmltag="Null" />
+            <!--Null-->
+            <medi:field xmltag="Null" />
+            <!--Product Description-->
+            <medi:field xmltag="ProductDescription" />
+        </medi:segment>
+
+        <!--27 REF Segment – PO Line Comments-->
+        <medi:segment segcode="REF" xmltag="POLineComments" >
+            <!--Entity Identifier Code-->
+            <medi:field xmltag="EntityIdentifierCode" />
+            <!--Reference Identification-->
+            <medi:field xmltag="ReferenceIdentification" />
+            <!--PO Line Comments-->
+            <medi:field xmltag="POLineComments" />
+        </medi:segment>
+
+        <!--28 CTT Segment – Transaction Totals-->
+        <medi:segment segcode="CTT" xmltag="TransactionTotals" >
+            <!--Number of Purchase Orders Lines-->
+            <medi:field xmltag="NumberofPurchaseOrdersLines" />
+        </medi:segment>
+
+        <!--29 SE Segment – Transaction Set Trailer-->
+        <medi:segment segcode="SE" xmltag="TransactionSetTrailer" >
+            <!--Number of segments included in the transaction set-->
+            <medi:field xmltag="NumberOfSegments" />
+            <!--Transaction Set Control Number-->
+            <medi:field xmltag="TransactionSetControlNumber" />
+        </medi:segment>
+
+        <!--30 GE Segment – Functional Group Trailer-->
+        <medi:segment segcode="GE" xmltag="FunctionalGroupTrailer" >
+            <!--Number of Transaction Sets – ST-->
+            <medi:field xmltag="NumberOfTransaction" />
+            <!--Functional Group Control Number-->
+            <medi:field xmltag="FunctionalGroupControlNumber" />
+        </medi:segment>
+
+        <!--31 IEA – Interchange Control Trailer -->
+        <medi:segment segcode="IEA" xmltag="InterchangeControlTrailer" >
+            <!--Number of Functional Groups Included-->
+            <medi:field xmltag="NumberOfFunctionalGroupsIncluded" />
+            <!--Interchange Control Number-->
+            <medi:field xmltag="InterchangeControlNumber" />
+        </medi:segment>
+
+    </medi:segments>
+</medi:edimap>

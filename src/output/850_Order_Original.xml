@@ -1,0 +1,164 @@
+<Order>
+	<InterchangeControlHeaderDetail>
+		<AuthorizationInformationQualifier>00</AuthorizationInformationQualifier>
+		<AuthorizationInformation>0000000000</AuthorizationInformation>
+		<SecurityInformationQualifier>00</SecurityInformationQualifier>
+		<SecurityInformation>0000000000</SecurityInformation>
+		<InterchangeIDQualifierSender>ZZ</InterchangeIDQualifierSender>
+		<InterchangeSenderID>BI WORLDWIDE   </InterchangeSenderID>
+		<InterchangeIDQualifier>ZZ</InterchangeIDQualifier>
+		<InterchangeReceiverID>0000003257     </InterchangeReceiverID>
+		<InterchangeDate>081121</InterchangeDate>
+		<InterchangeTime>0809</InterchangeTime>
+		<InterchangeControlStandardsIdentifier>U</InterchangeControlStandardsIdentifier>
+		<InterchangeControlVersionNumber>00403</InterchangeControlVersionNumber>
+		<InterchangeControlNumber>326080950</InterchangeControlNumber>
+		<AcknowledgementRequested>0</AcknowledgementRequested>
+		<TestIndicator>T</TestIndicator>
+		<SubElementSeparator>:</SubElementSeparator>
+	</InterchangeControlHeaderDetail>
+	<FunctionalGroupHeader>
+		<FunctionalIdentifierCode>PO</FunctionalIdentifierCode>
+		<ApplicationSenderCode>BI WORLDWIDE</ApplicationSenderCode>
+		<ApplicationReceiverCode>XYZ Company</ApplicationReceiverCode>
+		<Date>081121</Date>
+		<Time>0809</Time>
+		<GroupControlNumber>326080950</GroupControlNumber>
+		<ResponsibleAgencyCode>X</ResponsibleAgencyCode>
+		<VersionReleaseIndustryCode>00403</VersionReleaseIndustryCode>
+	</FunctionalGroupHeader>
+	<TransactionSetHeader>
+		<TransactionSetIdentifierCode>850</TransactionSetIdentifierCode>
+		<TransactionSetControlNumber>000770559</TransactionSetControlNumber>
+	</TransactionSetHeader>
+	<PurchaseOrder>
+		<TransactionSetPurposeCode>00</TransactionSetPurposeCode>
+		<TransactionSetControlNumber>SA</TransactionSetControlNumber>
+		<PurchaseOrderNumber>0000770562</PurchaseOrderNumber>
+		<PurchaseOrderDate>20080919</PurchaseOrderDate>
+	</PurchaseOrder>
+	<Currency>
+		<EntityIdentifierCode>BY</EntityIdentifierCode>
+		<CurrencyCode>USD</CurrencyCode>
+	</Currency>
+	<ReferenceIdentification>
+		<ReferenceIdentificationQualifier>IA</ReferenceIdentificationQualifier>
+		<ReferenceIdentification>0000004225</ReferenceIdentification>
+	</ReferenceIdentification>
+	<AdministrativeCommunicationsContact>
+		<ContactFunctionCode>BD</ContactFunctionCode>
+		<BIBuyerFullName>Paul Getzke</BIBuyerFullName>
+	</AdministrativeCommunicationsContact>
+	<RelatedInstructions>
+		<ShipmentMethod>DF</ShipmentMethod>
+		<LocationQualifier>ZZ</LocationQualifier>
+		<Description>PPA-Prepaid and Added to Invoice</Description>
+	</RelatedInstructions>
+	<SalesRequirements>
+		<SalesRequirementCode>N</SalesRequirementCode>
+	</SalesRequirements>
+	<TermsOfSale>
+		<Description>Net 30</Description>
+	</TermsOfSale>
+	<DateTime>
+		<Qualifier>002</Qualifier>
+		<Date>20081015</Date>
+	</DateTime>
+	<CarrierDetails>
+		<TransportTypeCode>M</TransportTypeCode>
+		<Routing>UPS</Routing>
+	</CarrierDetails>
+	<ReferenceIdentification>
+		<Qualifier>EU</Qualifier>
+		<Identification>0000770559</Identification>
+		<Description>BI Purchase Order No</Description>
+	</ReferenceIdentification>
+	<PurchaseOrderHeader>
+		<ReferenceCode>ADD</ReferenceCode>
+		<MessageText>Must Ship Via UPS. Ship Account Number is ABC123456. </MessageText>
+	</PurchaseOrderHeader>
+	<ShipToName>
+		<EntityIdentifierCode>ST</EntityIdentifierCode>
+		<Name>John Doe</Name>
+		<IdentificationCodeQualifier>92</IdentificationCodeQualifier>
+		<IdentificationCode>00000</IdentificationCode>
+	</ShipToName>
+	<ShipToAddressInformation>
+		<AddressInformation>XYZ Company</AddressInformation>
+		<AddressInformation2>1122 Anywhere Street</AddressInformation2>
+	</ShipToAddressInformation>
+	<ShipToAddressInformation>
+		<AddressInformation>Suite 101</AddressInformation>
+		<AddressInformation2>Attn John Doe</AddressInformation2>
+	</ShipToAddressInformation>
+	<ShipToGeographicalLocation>
+		<CityName>Edina</CityName>
+		<State>MN</State>
+		<Postal>55439</Postal>
+		<Country>USA</Country>
+	</ShipToGeographicalLocation>
+	<VendorName>
+		<EntityIdentifierCode>VN</EntityIdentifierCode>
+		<VendorName>XYZ Company</VendorName>
+	</VendorName>
+	<VendorAddressInformation>
+		<AddressInformation>C/O Dick Leedman</AddressInformation>
+		<AddressInformation2>85 West Erie Suite 3101    </AddressInformation2>
+	</VendorAddressInformation>
+	<VendorGeographicalLocation>
+		<CityName>Edina</CityName>
+		<State>MN</State>
+		<Postal>55439</Postal>
+		<Country>USA</Country>
+	</VendorGeographicalLocation>
+	<BillToName>
+		<EntityIdentifierCode>BT</EntityIdentifierCode>
+		<BillToName>Paul Getzke</BillToName>
+	</BillToName>
+	<BillToAddressInformation>
+		<AddressInformation>BI Accounts Payable Department 7630 Bush Lake Road  </AddressInformation>
+	</BillToAddressInformation>
+	<BillToGeographicalLocation>
+		<CityName>Edina</CityName>
+		<State>MN</State>
+		<Postal>55439</Postal>
+		<Country>USA</Country>
+	</BillToGeographicalLocation>
+	<BaselineItemData>
+		<LineNumber>1</LineNumber>
+		<QuantityOrdered>1.0000</QuantityOrdered>
+		<UnitMeasure>EA</UnitMeasure>
+		<UnitPrice>672.00000</UnitPrice>
+		<BasisUnitPriceCode>CP</BasisUnitPriceCode>
+		<VendorProductQualifier>VP</VendorProductQualifier>
+		<VendorPartNumber>47LB6300</VendorPartNumber>
+		<BIProductQualifier>IN</BIProductQualifier>
+		<BIItemNumber>Z1641452</BIItemNumber>
+		<UPCProductQualifier>UP</UPCProductQualifier>
+		<UPCNumber>000000719192592117</UPCNumber>
+	</BaselineItemData>
+	<ProductDescription>
+		<ItemDescriptionType>F</ItemDescriptionType>
+		<ProductDescription>BABY STROLLER</ProductDescription>
+	</ProductDescription>
+	<POLineComments>
+		<EntityIdentifierCode>L1</EntityIdentifierCode>
+		<ReferenceIdentification>PO Line Comments</ReferenceIdentification>
+		<POLineComments>Mens X-Large</POLineComments>
+	</POLineComments>
+	<TransactionTotals>
+		<NumberofPurchaseOrdersLines>1</NumberofPurchaseOrdersLines>
+	</TransactionTotals>
+	<TransactionSetTrailer>
+		<NumberOfSegments>24</NumberOfSegments>
+		<TransactionSetControlNumber>000770559</TransactionSetControlNumber>
+	</TransactionSetTrailer>
+	<FunctionalGroupTrailer>
+		<NumberOfTransaction>6</NumberOfTransaction>
+		<FunctionalGroupControlNumber>326080950</FunctionalGroupControlNumber>
+	</FunctionalGroupTrailer>
+	<InterchangeControlTrailer>
+		<NumberOfFunctionalGroupsIncluded>1</NumberOfFunctionalGroupsIncluded>
+		<InterchangeControlNumber>326080950</InterchangeControlNumber>
+	</InterchangeControlTrailer>
+</Order>
